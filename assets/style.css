@@ -1,0 +1,37 @@
+.my-image-gallery {
+    box-sizing: border-box;
+    min-height: 200px;
+}
+
+.my-image-gallery .item {
+    position: relative;
+    background-color: black;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: inherit;
+    cursor: pointer;
+}
+.my-image-gallery .item > span {
+    position: absolute;
+    color: white;
+    text-shadow: 0 0 2px #000;
+}
+
+.my-image-gallery .item::after {
+    position: absolute;
+    content: " ";
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255,255,255,.3);
+    transition: background-color 300ms ease-out;
+    cursor: pointer;
+}
+.my-image-gallery .item:hover::after{
+    background-color: rgba(255,255,255,0);
+}
+
+.my-image-gallery .item.odd-item {
+    margin-right: -5px;
+}
