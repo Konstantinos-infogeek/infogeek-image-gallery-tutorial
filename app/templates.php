@@ -22,8 +22,8 @@ if (!function_exists('iigt_get_gallery_template')) {
 		<section class='my-image-gallery'>
 			%s
 		</section>
-		", implode('', array_map(function($current, $index) use($show_name){
-			return iigt_get_gallery_item($current, $index, $show_name);
+		", implode('', array_map(function($current, $index) use($show_name, $columns){
+			return iigt_get_gallery_item($current, $index, $show_name, $columns);
 		}, $urls, array_keys($urls)) ) );
 	}
 }
@@ -36,12 +36,9 @@ if (!function_exists('iigt_get_gallery_item')) {
 	 *
 	 * @return string
 	 */
-	function iigt_get_gallery_item($url, $index, $show_name)
+	function iigt_get_gallery_item($url, $index, $show_name, $columns)
 	{
 		$name = ($show_name) ? '<span>'.iigt_get_file_name_from_url($url).'</span>' : '';
-
-		return sprintf("
-			<div class='item%s' style='background-image: url(%s);'>%s</div>
-		", $extra_class = ($index%2 == 0) ? ' odd-item': '', $url, $name);
+		return sprintf("<div class='item' style='background-image: url(%s);'>%s</div>", $url, $name);
 	}
 }

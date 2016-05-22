@@ -33,7 +33,7 @@ if (!function_exists('iigt_set_gallery_styles')) {
 
 		//Calculate values
 		$margin = 5;
-		$item_width = floor($width / $columns) - 2 * $margin;
+		$item_width = floor($width / $columns) - (2 * $margin);
 
 		wp_add_inline_style('iigt_style', sprintf("
 			.my-image-gallery {				

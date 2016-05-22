@@ -68,5 +68,5 @@ if (!function_exists('iigt_add_gallery_shortcode')) {
 
 	}
 
-	add_action('plugins_loaded', 'iigt_add_gallery_shortcode', 20);
+	add_action('after_setup_theme', 'iigt_add_gallery_shortcode', 20);
 }

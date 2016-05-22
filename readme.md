@@ -2,6 +2,7 @@
 
 This repo is for the tutorial for wordpress image gallery plugin. And adds a single shortcode __[my-image-gallery]__.
 
+Δείτε τη λίστα με τα actions: [Actions List](actions.md)
 
 ### Example:
 ---
